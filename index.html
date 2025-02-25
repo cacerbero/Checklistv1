@@ -28,9 +28,10 @@
         <ul id="taskList"></ul>
     </div>
     <script src="app.js"></script>
-    <script>
+    <script type="module">
         if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('/Checklist/service-worker.js', {
+            // Updated service worker registration with new URL() method
+            navigator.serviceWorker.register(new URL('/Checklistv1/service-worker.js', import.meta.url), {
                 scope: '/Checklistv1/'  
             })
                 .then(reg => console.log('Service Worker Registered'))
