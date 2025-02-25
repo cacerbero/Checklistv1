@@ -1,12 +1,12 @@
 const CACHE_NAME = "to-do-pwa-cache-v1";
 const FILES_TO_CACHE = [
-  "/Checklist/",
-  "Checklist/index.html",
-  "Checklist/style.css",
-  "Checklist/app.js",
-  "Checklist/manifest.json",
-  "Checklist/icons/icon-128.png",
-  "Checklist/icons/icon-512.png",
+  "/Checklistv1/",
+  "Checklistv1/index.html",
+  "Checklistv1/style.css",
+  "Checklistv1/app.js",
+  "Checklistv1/manifest.json",
+  "Checklistv1/icons/icon-128.png",
+  "Checklistv1/icons/icon-512.png",
 ];
 
 self.addEventListener("install", (event) => {
