@@ -30,7 +30,8 @@
     <script src="app.js"></script>
     <script>
         if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('/Checklistv1/service-worker.js', {
+            // Updated service worker registration with new URL() method
+            navigator.serviceWorker.register(new URL('/Checklistv1/service-worker.js', import.meta.url), {
                 scope: '/Checklistv1/'  
             })
                 .then(reg => console.log('Service Worker Registered'))
