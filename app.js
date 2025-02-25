@@ -1,3 +1,21 @@
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyBHrmGbmstEkWaWoqadebBlHaydoZYd6yE",
+  authDomain: "checklistv1-bf4b0.firebaseapp.com",
+  projectId: "checklistv1-bf4b0",
+  storageBucket: "checklistv1-bf4b0.firebasestorage.app",
+  messagingSenderId: "410939793571",
+  appId: "1:410939793571:web:5dc962c983b046795b9f16"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+
+
 const taskInput = document.getElementById('taskInput');
 const addTaskBtn = document.getElementById('addTaskBtn');
 const taskList = document.getElementById('taskList');
