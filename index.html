@@ -7,7 +7,19 @@
     <title>Checklist App</title>
     <link rel="stylesheet" href="style.css">
     <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/x-icon" href="/icons/favicon.ico.ico">
 </head>
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CBX7MYS8PL"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+  
+    gtag('config', 'G-CBX7MYS8PL');
+  </script>
+  
 <body>
     <h1>My To-Do List</h1>
     <div class="container">
@@ -19,20 +31,13 @@
     <script>
         if ('serviceWorker' in navigator) {
             navigator.serviceWorker.register('/Checklist/service-worker.js', {
-                scope: '/Checklist/'  
+                scope: '/Checklistv1/'  
             })
                 .then(reg => console.log('Service Worker Registered'))
                 .catch(err => console.error('Service Worker Error:', err));
         }
     </script>
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-CBX7MYS8PL"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-CBX7MYS8PL');
-</script>
 </body>
 </html>
