@@ -1,11 +1,4 @@
-22380
-92C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\node_modules\uuid\dist\esm\version.d.ts133850021922535236 0
-115C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\node_modules\firebase\compat\functions\dist\esm\app\index.d.ts133850022025036050 0
-126C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\node_modules\caniuse-lite\data\features\img-naturalwidth-naturalheight.js133850021941913790 0
-120C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\node_modules\@firebase\remote-config-compat\dist\esm\test\util.d.ts133850021922391339 0
-110C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\node_modules\firebase\compat\performance\dist\performance133850022028734611 1
-70C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\node_modules\.bin133850022156191221 1
-60C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\Modules133837906752680110 1
+22394
 110C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\node_modules\firebase\compat\storage\dist\esm\compat\auth133850022030287020 1
 94C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\node_modules\uuid\dist\cjs-browser\md5.js133850021915103046 0
 70C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\eslint.config.mjs133850008899285554 0
@@ -29,6 +22,7 @@
 91C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\node_modules\hash.js\test\hash-test.js133850021932596141 0
 60C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\.github133849947629642840 1
 95C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\node_modules\y18n\build\lib\platform-shims133850021900978093 1
+57C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\docs133850038766649291 1
 91C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\node_modules\uuid\dist\esm\validate.js133850021917334367 0
 126C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\node_modules\@firebase\auth\dist\rn\test\helpers\fake_service_worker.d.ts133850021954762974 0
 71C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\node_modules\xtend133850021904414430 1
@@ -74,7 +68,7 @@
 114C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\node_modules\jose\dist\node\cjs\lib\encrypt_key_management.js133850021916124178 0
 83C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\node_modules\@msgpackr-extract133850032126525230 1
 131C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\node_modules\@grpc\grpc-js\build\src\generated\grpc\channelz\v1\Address.js.map133850021925333529 0
-58C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\icons133837906752880691 1
+58C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\icons133850037925200002 1
 103C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\node_modules\@parcel\core\test\Environment.test.js133850021943990723 0
 93C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\node_modules\async\internal\wrapAsync.js133850021917415213 0
 96C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\node_modules\posthtml\node_modules\domutils133850021956870254 1
@@ -104,7 +98,7 @@
 82C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\node_modules\lodash.clonedeep133850021907244576 1
 93C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\node_modules\object-inspect\test\browser133850021905298607 1
 129C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\node_modules\@firebase\auth\dist\browser-cjs\src\core\user\account_info.d.ts133850021949437633 0
-63C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\index.html133849998045649371 0
+63C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\index.html133850038547320011 0
 81C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\node_modules\uri-js\dist\es5133850021911536578 1
 93C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\node_modules\node-forge\lib\pkcs7asn1.js133850021918406633 0
 109C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\node_modules\@opentelemetry\api\build\esm\metrics-api.js133850021920971335 0
@@ -152,6 +146,13 @@
 102C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\node_modules\object.assign\test\implementation.js133850021936677736 0
 120C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\node_modules\@firebase\auth\dist\node-esm\src\core\user\reload.d.ts133850021966485579 0
 96C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\node_modules\uuid\dist\esm-browser\parse.js133850021915570187 0
+92C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\node_modules\uuid\dist\esm\version.d.ts133850021922535236 0
+115C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\node_modules\firebase\compat\functions\dist\esm\app\index.d.ts133850022025036050 0
+126C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\node_modules\caniuse-lite\data\features\img-naturalwidth-naturalheight.js133850021941913790 0
+120C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\node_modules\@firebase\remote-config-compat\dist\esm\test\util.d.ts133850021922391339 0
+110C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\node_modules\firebase\compat\performance\dist\performance133850022028734611 1
+70C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\node_modules\.bin133850022156191221 1
+60C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\Modules133837906752680110 1
 129C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\node_modules\firebase-admin\lib\functions\functions-api-client-internal.d.ts133850021954843110 0
 90C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\node_modules\flatted\cjs\package.json133850021903928166 0
 95C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\node_modules\uuid\dist\cjs-browser\sha1.js133850021915740302 0
@@ -2285,6 +2286,7 @@
 111C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\node_modules\proto3-json-serializer\build\src\index.js.map133850021912572177 0
 106C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\node_modules\@parcel\core\test\RequestTracker.test.js133850021947243176 0
 136C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\node_modules\msgpackr-extract\node_modules\node-gyp-build-optional-packages\LICENSE133850021957287581 0
+78C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\docs\favicon.f01e269a.ico133850038756722529 0
 88C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\node_modules\which-typed-array\test133850021902068707 1
 68C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\node_modules\qs133850021908767645 1
 123C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\node_modules\@parcel\core\test\fixtures\invalid-target-source-not-file133850021948137960 1
@@ -2530,8 +2532,8 @@
 126C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\node_modules\firebase\compat\app-check\dist\esm\compat\storage\index.d.ts133850022019520960 0
 87C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\node_modules\os-browserify\LICENSE133850021951098427 0
 117C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\node_modules\@firebase\auth\dist\cordova\test\helpers\delay.d.ts133850021952036328 0
-84C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\node_modules\yargs-parser\build133850021899634113 1
 94C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\node_modules\@humanwhocodes\retry\LICENSE133850021898769779 0
+84C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\node_modules\yargs-parser\build133850021899634113 1
 92C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\node_modules\set-function-length\env.js133850021935624113 0
 133C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\node_modules\@firebase\auth\dist\node-esm\src\api\authentication\email_link.d.ts133850021952647942 0
 90C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\node_modules\yargs-parser\LICENSE.txt133850021906262483 0
@@ -5443,6 +5445,7 @@
 121C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\node_modules\firebase\performance\dist\esm\compat\app\index.cdn.d.ts133850022011121670 0
 79C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\node_modules\sha.js\bin.js133850021932430594 0
 100C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\node_modules\buffer-equal-constant-time\test.js133850021908069510 0
+70C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\icons\favicon.ico133837906752870618 0
 122C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\node_modules\@grpc\grpc-js\src\generated\google\protobuf\BoolValue.ts133850021929056201 0
 82C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\node_modules\sha.js\sha256.js133850021932588818 0
 133C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\node_modules\@parcel\core\test\fixtures\targets-default-distdir-one\package.json133850021948270823 0
@@ -8509,8 +8512,6 @@
 131C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\node_modules\google-gax\node_modules\@grpc\grpc-js\src\certificate-provider.ts133850021964878516 0
 87C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\node_modules\inherits\package.json133850021934543869 0
 114C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\node_modules\jose\dist\browser\runtime\get_sign_verify_key.js133850021917534318 0
-108C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\node_modules\@google-cloud\firestore\build\src\watch.js133850021921853938 0
-106C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\node_modules\htmlnano\lib\modules\removeUnusedCss.cjs133850021909941954 0
 126C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\node_modules\google-gax\node_modules\@grpc\grpc-js\build\src\constants.js133850021960257660 0
 130C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\node_modules\@firebase\database\dist\node-esm\src\core\AuthTokenProvider.d.ts133850021932777380 0
 106C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\node_modules\jose\dist\browser\runtime\is_key_like.js133850021918014638 0
@@ -8922,6 +8923,8 @@
 109C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\node_modules\htmlnano\lib\modules\removeOptionalTags.cjs133850021909746586 0
 133C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\node_modules\@firebase\database-compat\dist\database-compat\test\order.test.d.ts133850021929960110 0
 113C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\node_modules\firebase\compat\storage\dist\storage\index.d.ts133850022030818520 0
+108C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\node_modules\@google-cloud\firestore\build\src\watch.js133850021921853938 0
+106C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\node_modules\htmlnano\lib\modules\removeUnusedCss.cjs133850021909941954 0
 106C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\node_modules\htmlnano\lib\modules\removeUnusedCss.mjs133850021915449882 0
 115C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\node_modules\crypto-browserify\.github\workflows\node-tens.yml133850021954103511 0
 105C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\node_modules\htmlnano\lib\modules\sortAttributes.cjs133850021910162378 0
@@ -10781,7 +10784,6 @@
 87C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\node_modules\flat-cache\src\del.js133850021901277841 0
 89C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\node_modules\flat-cache\src\utils.js133850021901835456 0
 94C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\node_modules\@parcel\transformer-html\src133850021907037747 1
-74C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\icons\favicon.ico.ico133837906752870618 0
 88C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\node_modules\firebase-admin\LICENSE133850021952358183 0
 94C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\node_modules\firebase-admin\lib\app-check133850021955591509 1
 114C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\node_modules\@firebase\auth\dist\node-esm\src\model\auth.d.ts133850021951321436 0
@@ -12306,6 +12308,7 @@
 102C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\node_modules\firebase\auth\web-extension\dist\esm133850022018072009 1
 114C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\node_modules\firebase\auth\dist\auth\web-extension\index.d.ts133850022016956205 0
 115C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\node_modules\@opentelemetry\api\build\src\api\propagation.d.ts133850021933511295 0
+75C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\docs\service-worker.js133850038757345036 0
 126C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\node_modules\firebase\firestore\lite\dist\esm\compat\app-check\index.d.ts133850022034726445 0
 105C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\node_modules\firebase\compat\database\dist\index.mjs133850022008893537 0
 85C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\node_modules\fill-range\index.js133850021906637409 0
@@ -13641,6 +13644,7 @@
 108C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\node_modules\firebase\compat\database\dist\index.cjs.js133850021970021198 0
 146C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\node_modules\@firebase\firestore\dist\lite\firestore\test\unit\local\test_mutation_queue.d.ts133850021983966548 0
 112C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\node_modules\firebase\compat\database\dist\index.cjs.js.map133850022007785279 0
+79C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\docs\service-worker.js.map133850038757371264 0
 109C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\node_modules\firebase\compat\database\dist\index.mjs.map133850022008390175 0
 105C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\node_modules\firebase\compat\database\dist\messaging133850022022595336 1
 89C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\node_modules\@parcel\watcher\LICENSE133850021938495383 0
@@ -14302,6 +14306,7 @@
 114C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\node_modules\@firebase\messaging-compat\dist\index.cjs.js.map133850021926842230 0
 108C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\node_modules\firebase\auth\web-extension\dist\index.mjs133850022008734981 0
 121C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\node_modules\@parcel\transformer-html\node_modules\srcset\index.d.ts133850021955571505 0
+78C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\docs\manifest.webmanifest133850038766388719 0
 112C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\node_modules\firebase\auth\web-extension\dist\index.mjs.map133850022008344496 0
 88C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\node_modules\domelementtype\LICENSE133850021901227277 0
 112C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\node_modules\firebase\auth\web-extension\dist\installations133850022018112011 1
@@ -20971,6 +20976,7 @@
 92C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\node_modules\@firebase\auth-compat\dist133850021931558260 1
 97C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\node_modules\@firebase\auth-compat\README.md133850021931548295 0
 109C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\node_modules\@firebase\auth-compat\dist\index.cjs.js.map133850021930997023 0
+79C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\docs\icon-512.d9e26802.png133850038756722529 0
 109C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\node_modules\@firebase\auth-compat\dist\index.esm2017.js133850021927181213 0
 113C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\node_modules\@firebase\auth-compat\dist\index.esm2017.js.map133850021931111051 0
 110C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\node_modules\@firebase\auth-compat\dist\index.node.cjs.js133850021927247602 0
@@ -22378,4 +22384,12 @@
 79C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\node_modules\.bin\uuid.cmd133850022155850387 0
 93C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\Modules\Module 1\Week 1 Instructions.pdf133837906752857467 0
 71C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\icons\icon-128.png133837906752880691 0
+79C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\docs\icon-128.445b138c.png133850038756709710 0
+75C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\docs\index.58744966.js133850038766394012 0
+79C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\docs\index.58744966.js.map133850038766643965 0
+76C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\docs\index.65dce202.css133850038766394012 0
+80C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\docs\index.65dce202.css.map133850038766614072 0
+68C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\docs\index.html133850038766388719 0
+84C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\docs\service-worker.9086cb69.js133850038766394012 0
+88C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\docs\service-worker.9086cb69.js.map133850038766614072 0
 81C:\Users\carlo\PWA2025winter\CheckListv1\Checklistv1\.github\workflows\deploy.yml133849949911629014 0

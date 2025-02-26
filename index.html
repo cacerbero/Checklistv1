@@ -29,21 +29,20 @@
         <button id="addTaskBtn">Add Task</button>
         <ul id="taskList"></ul>
     </div>
+
+    <!-- Only include the type="module" script for app.js -->
     <script type="module" src="app.js"></script>
 
-    <script src="app.js"></script>
+    <!-- Service Worker Registration Script (if required) -->
     <script type="module">
         if ('serviceWorker' in navigator) {
-            // Updated service worker registration with new URL() method
-            navigator.serviceWorker.register(new URL('/Checklistv1/service-worker.js', import.meta.url), {
+            navigator.serviceWorker.register(new URL('./service-worker.js', import.meta.url), {
                 scope: '/Checklistv1/'
             })
-                .then(reg => console.log('Service Worker Registered'))
-                .catch(err => console.error('Service Worker Error:', err));
+            .then(reg => console.log('Service Worker Registered'))
+            .catch(err => console.error('Service Worker Error:', err));
         }
     </script>
-    <!-- Google tag (gtag.js) -->
-
 </body>
 
 </html>
