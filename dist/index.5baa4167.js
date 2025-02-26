@@ -617,6 +617,8 @@ const app = (0, _app.initializeApp)(firebaseConfig);
 const db = (0, _firestore.getFirestore)(app);
 console.log("Firebase initialized properly", app);
 console.log("Firestore instance created:", db);
+// Initialize Google Generative AI
+let apiKey, genAI, model;
 // Call in the event listener for page load
 async function getApiKey() {
     const docRef = (0, _firestore.doc)(db, "apikeys", "googlegenai");
@@ -644,27 +646,33 @@ if ('serviceWorker' in navigator) {
     }).then((_)=>console.log('Service Worker Registered for scope:', sw.href, 'with', "file:///app.js")).catch((err)=>console.error('Service Worker Error:', err));
 }
 console.log('Service Worker setup is working..');
+// DOM Elements
 const taskInput = document.getElementById('taskInput');
 const addTaskBtn = document.getElementById('addTaskBtn');
 const taskList = document.getElementById('taskList');
 const aiButton = document.getElementById('send-btn');
 const aiInput = document.getElementById('chat-input');
 const chatHistory = document.getElementById('chat-history');
+// Event listeners
 window.addEventListener('load', ()=>{
     renderTasks();
 });
-// Add Task
-addTaskBtn.addEventListener('click', async ()=>{
+// Task addition and input handling
+function addTask(task) {
+    const taskText = sanitizeInput(task);
+    if (taskText) addTaskToFirestore(taskText).then((taskId)=>{
+        createLiTask(taskId, taskText);
+        taskInput.value = "";
+    });
+    else alert("Please enter task!");
+}
+addTaskBtn.addEventListener('click', ()=>{
     const task = taskInput.value.trim();
-    if (task) {
-        const taskText = sanitizeInput(task);
-        if (taskText) {
-            let taskId = await addTaskToFirestore(taskText);
-            createLiTask(taskId, taskText);
-            taskInput.value = "";
-        } else alert("Please enter task!");
-    }
+    if (task) addTask(task);
     renderTasks();
+});
+taskInput.addEventListener("keypress", (event)=>{
+    if (event.key === "Enter") addTask(taskInput.value.trim());
 });
 // Remove Task
 taskList.addEventListener('click', async (e)=>{
@@ -673,9 +681,9 @@ taskList.addEventListener('click', async (e)=>{
     });
     renderTasks();
 });
-// Render Task
+// Render tasks
 async function renderTasks() {
-    var tasks = await getTasksFromFirestore();
+    const tasks = await getTasksFromFirestore();
     taskList.innerHTML = "";
     tasks.forEach((task)=>{
         if (!task.data().completed) {
@@ -687,14 +695,14 @@ async function renderTasks() {
     });
 }
 async function addTaskToFirestore(taskText) {
-    let docRef = await (0, _firestore.addDoc)((0, _firestore.collection)(db, "todos"), {
+    const docRef = await (0, _firestore.addDoc)((0, _firestore.collection)(db, "todos"), {
         text: taskText,
         completed: false
     });
     return docRef.id;
 }
 async function getTasksFromFirestore() {
-    var data = await (0, _firestore.getDocs)((0, _firestore.collection)(db, "todos"));
+    const data = await (0, _firestore.getDocs)((0, _firestore.collection)(db, "todos"));
     let userData = [];
     data.forEach((doc)=>{
         userData.push(doc);
@@ -707,53 +715,38 @@ function sanitizeInput(input) {
     return div.innerHTML;
 }
 function createLiTask(id, text) {
-    let taskItem = document.createElement("li");
+    const taskItem = document.createElement("li");
     taskItem.id = id;
     taskItem.textContent = text;
     taskItem.tabIndex = 0;
     taskList.appendChild(taskItem);
 }
-// Allow task addition on enter key while in task input
-taskInput.addEventListener('keydown', async (e)=>{
-    if (e.key === 'Enter') {
-        const task = taskInput.value.trim();
-        if (task) {
-            const taskText = sanitizeInput(task);
-            if (taskText) {
-                let taskId = await addTaskToFirestore(taskText);
-                createLiTask(taskId, taskText);
-                taskInput.value = "";
-            } else alert("Please enter task!");
-        }
-        renderTasks();
-    }
-});
-// Chatbot Event Listener
+// AI chatbot interaction
 aiButton.addEventListener('click', async ()=>{
-    let prompt = aiInput.value.trim().toLowerCase();
+    const prompt = aiInput.value.trim().toLowerCase();
     if (prompt) {
-        if (!ruleChatBot(prompt)) {
-            const response = await fetch('https://api.example.com/chatbot', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${apiKey}`
-                },
-                body: JSON.stringify({
-                    prompt: prompt
-                })
-            });
-            const data = await response.json();
-            // Display the chatbot response in the chat history
-            const chatHistory = document.getElementById('chat-history');
-            const message = document.createElement('div');
-            message.textContent = data.reply;
-            chatHistory.appendChild(message);
-            // Clear the input field
-            aiInput.value = '';
-        }
+        const response = await fetch('https://api.example.com/chatbot', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${apiKey}`
+            },
+            body: JSON.stringify({
+                prompt: prompt
+            })
+        });
+        const data = await response.json();
+        const message = document.createElement('div');
+        message.textContent = data.reply;
+        chatHistory.appendChild(message);
+        aiInput.value = '';
     }
 });
+// Logging and debugging
+(0, _loglevelDefault.default).setLevel("info");
+(0, _loglevelDefault.default).info("Application started");
+(0, _loglevelDefault.default).debug("Debugging information");
+(0, _loglevelDefault.default).error("An error occurred");
 
 },{"firebase/app":"aM3Fo","firebase/firestore":"8A4BC","@google/generative-ai":"gKJrW","a9f901fea61c26ef":"72bEf","loglevel":"7kRFs","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"aM3Fo":[function(require,module,exports,__globalThis) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
