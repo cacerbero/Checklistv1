@@ -160,14 +160,6 @@ log.info("Application started");
 log.debug("Debugging information");
 log.error("An error occurred");
 
-Integrating the Chatbot with the To-Do App
-We need to connect the Chatbot to the to-do list so that it can:
-
-Add new tasks
-List current tasks
-Mark tasks as complete
-Create a function to add chatbot logic to recognize task-related commands:
-
 function ruleChatBot(request) {
   if (request.startsWith("add task")) {
     let task = request.replace("add task", "").trim();
@@ -207,3 +199,22 @@ aiButton.addEventListener('click', async () => {
   }  
 });
 
+function appendMessage(message) {
+  let history = document.createElement("div");
+  history.textContent = message;
+  history.className = 'history';
+  chatHistory.appendChild(history);
+  aiInput.value = "";
+}
+
+function removeFromTaskName(task) {
+  let ele = document.getElementsByName(task);
+  if(ele.length == 0){
+    return false;
+  }
+  ele.forEach(e => {
+    removeTask(e.id);
+    removeVisualTask(e.id);
+  })
+  return true;
+}
