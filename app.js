@@ -22,7 +22,7 @@ console.log("Firestore instance created:", db);
 
 // Call in the event listener for page load
 async function getApiKey() {
-    const docRef = doc(db, "apikeys", "googlegenai");
+    const docRef = doc(db, "apikeys", "googlegeani");
     let snapshot = await getDoc(docRef);
     apiKey = snapshot.data().key;
     genAI = new GoogleGenerativeAI(apiKey);

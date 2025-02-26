@@ -619,7 +619,7 @@ console.log("Firebase initialized properly", app);
 console.log("Firestore instance created:", db);
 // Call in the event listener for page load
 async function getApiKey() {
-    const docRef = (0, _firestore.doc)(db, "apikeys", "googlegenai");
+    const docRef = (0, _firestore.doc)(db, "apikeys", "googlegeani");
     let snapshot = await (0, _firestore.getDoc)(docRef);
     apiKey = snapshot.data().key;
     genAI = new (0, _generativeAi.GoogleGenerativeAI)(apiKey);
