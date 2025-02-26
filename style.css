@@ -9,7 +9,7 @@ body {
 
 h1 {
     background-color: 
-#0078D7;
+#375A8B;
     color: 
 white;
     padding: 10px;
@@ -32,7 +32,7 @@ input[type="text"] {
 button {
     padding: 10px 15px;
     background-color: 
-#0078D7;
+#375A8B;
     color: 
 white;
     border: none;
@@ -58,4 +58,8 @@ white;
     border: 1px solid 
 #ccc;
     border-radius: 4px;
+}
+
+label {
+    display: block;
 }

@@ -23,26 +23,18 @@
 </script>
 
 <body>
-    <h1>My To-Do List</h1>
-    <div class="container">
-        <input type="text" id="taskInput" placeholder="Enter a new task">
-        <button id="addTaskBtn">Add Task</button>
-        <ul id="taskList"></ul>
-    </div>
-
-    <!-- Only include the type="module" script for app.js -->
+    <header>
+        <h1>My To-Do List</h1>
+    </header>
+    <main>
+        <div class="container">
+            <label for="taskInput">
+                <h2>Enter a task</h2>
+            </label>
+            <input name="taskInput" type="text" id="taskInput">
+            <button id="addTaskBtn">Add Task</button>
+            <ul aria-live="polite" id="taskList"></ul>
+        </div>
+    </main>
     <script type="module" src="app.js"></script>
-
-    <!-- Service Worker Registration Script (if required) -->
-    <script type="module">
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register(new URL('./service-worker.js', import.meta.url), {
-                scope: '/Checklistv1/'
-            })
-            .then(reg => console.log('Service Worker Registered'))
-            .catch(err => console.error('Service Worker Error:', err));
-        }
-    </script>
-</body>
-
 </html>
