@@ -50,9 +50,12 @@ addTaskBtn.addEventListener('click', async () => {
         const taskText = sanitizeInput(taskInput.value.trim());
 
         if (taskText) {
-            await addTaskToFirestore(taskText);
+            let taskId = await addTaskToFirestore(taskText);
             renderTasks();
             taskInput.value = "";
+            createLiTask(taskId, task);
+        } else {
+          alert("Please enter task!");
         }
         renderTasks();
     }
@@ -67,7 +70,6 @@ taskList.addEventListener('click', async (e) => {
   }
   renderTasks();
 });
-
 
 async function renderTasks() {
     var tasks = await getTasksFromFirestore();
