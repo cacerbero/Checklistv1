@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,13 +15,13 @@
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-GXEXKMPXXD"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-  gtag('config', 'G-GXEXKMPXXD');
+    gtag('config', 'G-GXEXKMPXXD');
 </script>
-  
+
 <body>
     <h1>My To-Do List</h1>
     <div class="container">
@@ -28,18 +29,20 @@
         <button id="addTaskBtn">Add Task</button>
         <ul id="taskList"></ul>
     </div>
-    <script src="app.js"></script>
+
+    <!-- Only include the type="module" script for app.js -->
+    <script type="module" src="app.js"></script>
+
+    <!-- Service Worker Registration Script (if required) -->
     <script type="module">
         if ('serviceWorker' in navigator) {
-            // Updated service worker registration with new URL() method
-            navigator.serviceWorker.register(new URL('/Checklistv1/service-worker.js', import.meta.url), {
-                scope: '/Checklistv1/'  
+            navigator.serviceWorker.register(new URL('./service-worker.js', import.meta.url), {
+                scope: '/Checklistv1/'
             })
-                .then(reg => console.log('Service Worker Registered'))
-                .catch(err => console.error('Service Worker Error:', err));
+            .then(reg => console.log('Service Worker Registered'))
+            .catch(err => console.error('Service Worker Error:', err));
         }
     </script>
-    <!-- Google tag (gtag.js) -->
-
 </body>
+
 </html>
