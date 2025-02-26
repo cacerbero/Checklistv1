@@ -22,20 +22,25 @@ gtag('js', new Date());
 gtag('config', 'G-GXEXKMPXXD');
 
 </script>
+
 <body>
     <header>
         <h1>My To-Do List</h1>
     </header>
     <main>
         <div class="container">
-            <label for="taskInput"><h2>Enter a task</h2></label>
+            <label for="taskInput">
+                <h2>Enter a task</h2>
+            </label>
             <input name="taskInput" type="text" id="taskInput">
             <button id="addTaskBtn">Add Task</button>
             <ul aria-live="polite" id="taskList"></ul>
         </div>
+        <div id="chatbot-container">
+            <div id="chat-history"></div>
+            <input type="text" id="chat-input">
+            <button id="send-btn">Send</button>
+        </div>
     </main>
     <script src="/index.5baa4167.js" defer=""></script>
-
-
-
 </body></html>

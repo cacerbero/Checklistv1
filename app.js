@@ -1,6 +1,19 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { doc, getDocs, addDoc, updateDoc, getFirestore, collection } from "firebase/firestore";
+import { GoogleGenerativeAI } from '@google/generative-ai';
+
+//Call in the event listener for page load
+async function getApiKey() {
+  let snapshot = await getDoc(doc(db, "apikey", "googlegenai"));
+  apiKey =  snapshot.data().key;
+  genAI = new GoogleGenerativeAI(apiKey);
+  model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+}
+
+async function askChatBot(request) {
+  return await model.generateContent(request);
+}
 // https://firebase.google.com/docs/web/setup#available-libraries
 const sw = new URL('service-worker.js', import.meta.url)
 if ('serviceWorker' in navigator) {
@@ -146,3 +159,51 @@ log.setLevel("info");
 log.info("Application started");
 log.debug("Debugging information");
 log.error("An error occurred");
+
+Integrating the Chatbot with the To-Do App
+We need to connect the Chatbot to the to-do list so that it can:
+
+Add new tasks
+List current tasks
+Mark tasks as complete
+Create a function to add chatbot logic to recognize task-related commands:
+
+function ruleChatBot(request) {
+  if (request.startsWith("add task")) {
+    let task = request.replace("add task", "").trim();
+    if (task) {
+        addTask(task);
+        appendMessage('Task ' + task + ' added!');
+    } else {
+        appendMessage("Please specify a task to add.");
+    }
+    return true;
+  } else if (request.startsWith("complete")) {
+      let taskName = request.replace("complete", "").trim();
+      if (taskName) {
+          if(removeFromTaskName(taskName)) {
+            appendMessage('Task ' + taskName + ' marked as complete.');
+          } else {
+            appendMessage("Task not found!");
+          }
+          
+      } else {
+          appendMessage("Please specify a task to complete.");
+      }
+      return true;
+  }
+
+  return false;
+}
+
+aiButton.addEventListener('click', async () => {
+  let prompt = aiInput.value.trim().toLowerCase();
+  if(prompt) {
+    if(!ruleChatBot(prompt)){
+      askChatBot(prompt);
+    }
+  } else {
+    appendMessage("Please enter a prompt")
+  }  
+});
+

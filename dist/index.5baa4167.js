@@ -639,10 +639,11 @@ addTaskBtn.addEventListener('click', async ()=>{
         const taskInput = document.getElementById("taskInput");
         const taskText = sanitizeInput(taskInput.value.trim());
         if (taskText) {
-            await addTaskToFirestore(taskText);
+            let taskId = await addTaskToFirestore(taskText);
             renderTasks();
             taskInput.value = "";
-        }
+            createLiTask(taskId, task);
+        } else alert("Please enter task!");
         renderTasks();
     }
 });
@@ -653,6 +654,7 @@ taskList.addEventListener('click', async (e)=>{
     });
     renderTasks();
 });
+//Render Task
 async function renderTasks() {
     var tasks = await getTasksFromFirestore();
     taskList.innerHTML = "";
@@ -684,6 +686,24 @@ function sanitizeInput(input) {
     div.textContent = input;
     return div.innerHTML;
 }
+function createLiTask(id, text) {
+    let taskItem = document.createElement("li");
+    taskItem.id = id;
+    taskItem.textContent = text;
+    taskItem.tabIndex = 0;
+    taskList.appendChild(taskItem);
+}
+//Allow task addition on enter key while in task input
+taskInput.addEventListener("keypress", function(event) {
+    if (event.key === "Enter") addTaskBtn.click();
+});
+//Allow tasks to be completed on enter
+taskList.addEventListener("keypress", async function(e) {
+    if (e.target.tagName === 'LI' && e.key === "Enter") await (0, _firestore.updateDoc)((0, _firestore.doc)(db, "todos", e.target.id), {
+        completed: true
+    });
+    renderTasks();
+});
 window.addEventListener('error', function(event) {
     console.error('Error occurred: ', event.message);
 });
