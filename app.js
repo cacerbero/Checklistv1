@@ -70,7 +70,7 @@ taskList.addEventListener('click', async (e) => {
   }
   renderTasks();
 });
-
+//Render Task
 async function renderTasks() {
     var tasks = await getTasksFromFirestore();
     taskList.innerHTML = "";
@@ -106,6 +106,31 @@ async function renderTasks() {
     div.textContent = input;
     return div.innerHTML;
   }
+
+  function createLiTask(id, text) {
+    let taskItem = document.createElement("li");
+    taskItem.id = id;
+    taskItem.textContent = text;
+    taskItem.tabIndex = 0;
+    taskList.appendChild(taskItem);
+  }
+
+  //Allow task addition on enter key while in task input
+  taskInput.addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+      addTaskBtn.click();
+    }
+  });
+
+  //Allow tasks to be completed on enter
+  taskList.addEventListener("keypress", async function(e) {
+    if (e.target.tagName === 'LI' && e.key === "Enter") {
+      await updateDoc(doc(db, "todos", e.target.id), {
+        completed: true
+      });  
+    }
+    renderTasks();
+  });
 
 window.addEventListener('error', function (event) {
     console.error('Error occurred: ', event.message);
