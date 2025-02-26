@@ -24,9 +24,19 @@ console.log("Firestore instance created:", db);
 async function getApiKey() {
     const docRef = doc(db, "apikeys", "googlegenai");
     let snapshot = await getDoc(docRef);
+
     apiKey = snapshot.data().key;
     genAI = new GoogleGenerativeAI(apiKey);
     model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+
+    if (snapshot.exists()) {
+        apiKey = snapshot.data().key;
+        genAI = new GoogleGenerativeAI(apiKey);
+        model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+    } else {
+        console.error("No such document!");
+    }
+main
 }
 
 // Ensure getApiKey is called first
@@ -51,6 +61,11 @@ console.log('Service Worker setup is working..');
 const taskInput = document.getElementById('taskInput');
 const addTaskBtn = document.getElementById('addTaskBtn');
 const taskList = document.getElementById('taskList');
+
+const aiButton = document.getElementById('send-btn');
+const aiInput = document.getElementById('chat-input');
+const chatHistory = document.getElementById('chat-history');
+
 
 window.addEventListener('load', () => {
     renderTasks();
@@ -129,6 +144,7 @@ function createLiTask(id, text) {
 }
 
 // Allow task addition on enter key while in task input
+
 taskInput.addEventListener("keypress", function(event) {
     if (event.key === "Enter") {
         addTaskBtn.click();
@@ -214,3 +230,48 @@ function removeFromTaskName(task) {
     });
     return true;
 }
+
+taskInput.addEventListener('keydown', async (e) => {
+    if (e.key === 'Enter') {
+        const task = taskInput.value.trim();
+        if (task) {
+            const taskText = sanitizeInput(task);
+            if (taskText) {
+                let taskId = await addTaskToFirestore(taskText);
+                createLiTask(taskId, taskText);
+                taskInput.value = "";
+            } else {
+                alert("Please enter task!");
+            }
+        }
+        renderTasks();
+    }
+});
+
+// Chatbot Event Listener
+aiButton.addEventListener('click', async () => {
+    let prompt = aiInput.value.trim().toLowerCase();
+    if (prompt) {
+        if (!ruleChatBot(prompt)) {
+            const response = await fetch('https://api.example.com/chatbot', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${apiKey}`
+                },
+                body: JSON.stringify({ prompt: prompt })
+            });
+
+            const data = await response.json();
+            // Display the chatbot response in the chat history
+            const chatHistory = document.getElementById('chat-history');
+            const message = document.createElement('div');
+            message.textContent = data.reply;
+            chatHistory.appendChild(message);
+
+            // Clear the input field
+            aiInput.value = '';
+        }
+    }
+});
+

@@ -82,7 +82,11 @@ rgba(0, 0, 0, 0.1);
     overflow-y: auto;
     border-bottom: 1px solid 
 #ccc;
+<<<<<<< HEAD
     margin-bottom: 11px;
+=======
+    margin-bottom: 10px;
+>>>>>>> main
     padding: 5px;
 }
 

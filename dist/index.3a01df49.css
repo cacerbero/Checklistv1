@@ -9,7 +9,11 @@ body {
 h1 {
   color: #fff;
   background-color: #375a8b;
+<<<<<<< HEAD
   padding: 10px;
+=======
+  padding: 11px;
+>>>>>>> main
 }
 
 .container {
@@ -54,4 +58,41 @@ li {
 label {
   display: block;
 }
+<<<<<<< HEAD
+=======
+
+#chatbot-container {
+  background: #fff;
+  border: 1px solid #ccc;
+  width: 300px;
+  padding: 10px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  box-shadow: 0 4px 6px #0000001a;
+}
+
+#chat-history {
+  border-bottom: 1px solid #ccc;
+  height: 200px;
+  margin-bottom: 10px;
+  padding: 5px;
+  overflow-y: auto;
+}
+
+#chat-input {
+  width: calc(100% - 60px);
+  margin-right: 5px;
+  padding: 5px;
+}
+
+#send-btn {
+  cursor: pointer;
+  padding: 5px 10px;
+}
+
+.history {
+  padding-bottom: 15px;
+}
+>>>>>>> main
 /*# sourceMappingURL=index.3a01df49.css.map */
