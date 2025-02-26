@@ -24,13 +24,9 @@ console.log("Firestore instance created:", db);
 async function getApiKey() {
     const docRef = doc(db, "apikeys", "googlegenai");
     let snapshot = await getDoc(docRef);
-    if (snapshot.exists()) {
-        apiKey = snapshot.data().key;
-        genAI = new GoogleGenerativeAI(apiKey);
-        model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
-    } else {
-        console.error("No such document!");
-    }
+    apiKey = snapshot.data().key;
+    genAI = new GoogleGenerativeAI(apiKey);
+    model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 }
 
 // Ensure getApiKey is called first
@@ -55,9 +51,6 @@ console.log('Service Worker setup is working..');
 const taskInput = document.getElementById('taskInput');
 const addTaskBtn = document.getElementById('addTaskBtn');
 const taskList = document.getElementById('taskList');
-const aiButton = document.getElementById('send-btn');
-const aiInput = document.getElementById('chat-input');
-const chatHistory = document.getElementById('chat-history');
 
 window.addEventListener('load', () => {
     renderTasks();
@@ -136,46 +129,88 @@ function createLiTask(id, text) {
 }
 
 // Allow task addition on enter key while in task input
-taskInput.addEventListener('keydown', async (e) => {
-    if (e.key === 'Enter') {
-        const task = taskInput.value.trim();
-        if (task) {
-            const taskText = sanitizeInput(task);
-            if (taskText) {
-                let taskId = await addTaskToFirestore(taskText);
-                createLiTask(taskId, taskText);
-                taskInput.value = "";
-            } else {
-                alert("Please enter task!");
-            }
-        }
-        renderTasks();
+taskInput.addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+        addTaskBtn.click();
     }
 });
 
-// Chatbot Event Listener
+// Allow tasks to be completed on enter
+taskList.addEventListener("keypress", async function(e) {
+    if (e.target.tagName === 'LI' && e.key === "Enter") {
+        await updateDoc(doc(db, "todos", e.target.id), {
+            completed: true
+        });
+    }
+    renderTasks();
+});
+
+// Global error handler
+window.addEventListener('error', function (event) {
+    console.error('Error occurred: ', event.message);
+});
+
+// Loglevel setup
+log.setLevel("info");
+
+// Example logs
+log.info("Application started");
+log.debug("Debugging information");
+log.error("An error occurred");
+
+function ruleChatBot(request) {
+    if (request.startsWith("add task")) {
+        let task = request.replace("add task", "").trim();
+        if (task) {
+            addTask(task);
+            appendMessage('Task ' + task + ' added!');
+        } else {
+            appendMessage("Please specify a task to add.");
+        }
+        return true;
+    } else if (request.startsWith("complete")) {
+        let taskName = request.replace("complete", "").trim();
+        if (taskName) {
+            if(removeFromTaskName(taskName)) {
+                appendMessage('Task ' + taskName + ' marked as complete.');
+            } else {
+                appendMessage("Task not found!");
+            }
+        } else {
+            appendMessage("Please specify a task to complete.");
+        }
+        return true;
+    }
+    return false;
+}
+
 aiButton.addEventListener('click', async () => {
     let prompt = aiInput.value.trim().toLowerCase();
-    if (prompt) {
-        if (!ruleChatBot(prompt)) {
-            const response = await fetch('https://api.example.com/chatbot', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${apiKey}`
-                },
-                body: JSON.stringify({ prompt: prompt })
-            });
-
-            const data = await response.json();
-            // Display the chatbot response in the chat history
-            const chatHistory = document.getElementById('chat-history');
-            const message = document.createElement('div');
-            message.textContent = data.reply;
-            chatHistory.appendChild(message);
-
-            // Clear the input field
-            aiInput.value = '';
+    if(prompt) {
+        if(!ruleChatBot(prompt)){
+            askChatBot(prompt);
         }
+    } else {
+        appendMessage("Please enter a prompt");
     }
 });
+
+function appendMessage(message) {
+    let history = document.createElement("div");
+    history.textContent = message;
+    history.className = 'history';
+    chatHistory.appendChild(history);
+    aiInput.value = "";
+}
+
+function removeFromTaskName(task) {
+    let ele = document.getElementsByName(task);
+    if(ele.length == 0){
+        return false;
+    }
+    ele.forEach(e => {
+        removeTask(e.id);
+        removeVisualTask(e.id);
+    });
+    return true;
+}
