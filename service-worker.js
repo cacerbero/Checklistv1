@@ -20,7 +20,6 @@ self.addEventListener("install", (event) => {
         })
         .catch((error) => {
             console.error('Cache open failed', error);
-
         })
   );
 });
