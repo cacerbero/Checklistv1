@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +7,6 @@
     <title>Checklist App</title>
     <link rel="stylesheet" href="/index.3a01df49.css">
     <link rel="manifest" href="/manifest.webmanifest">
-    <!-- Updated the favicon path -->
     <link rel="icon" type="image/x-icon" href="/favicon.5f03a48b.ico">
 </head>
 
@@ -38,9 +36,11 @@ gtag('config', 'G-GXEXKMPXXD');
         </div>
         <div id="chatbot-container">
             <div id="chat-history"></div>
-            <input type="text" id="chat-input">
+            <label for="chat-input" hidden="">Chat Input</label> 
+            <input type="text" id="chat-input" name="chatInput" placeholder="Type your message">
             <button id="send-btn">Send</button>
         </div>
     </main>
     <script src="/index.5baa4167.js" defer=""></script>
-</body></html>
+</body>
+</html>

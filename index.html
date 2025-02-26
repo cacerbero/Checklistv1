@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +7,6 @@
     <title>Checklist App</title>
     <link rel="stylesheet" href="style.css">
     <link rel="manifest" href="manifest.json">
-    <!-- Updated the favicon path -->
     <link rel="icon" type="image/x-icon" href="/icons/favicon.ico">
 </head>
 
@@ -18,7 +16,6 @@
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
-
     gtag('config', 'G-GXEXKMPXXD');
 </script>
 
@@ -37,9 +34,11 @@
         </div>
         <div id="chatbot-container">
             <div id="chat-history"></div>
-            <input type="text" id="chat-input">
+            <label for="chat-input" hidden>Chat Input</label> 
+            <input type="text" id="chat-input" name="chatInput" placeholder="Type your message">
             <button id="send-btn">Send</button>
         </div>
     </main>
     <script type="module" src="app.js"></script>
+</body>
 </html>
