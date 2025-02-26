@@ -5,7 +5,7 @@ import { GoogleGenerativeAI } from '@google/generative-ai';
 
 //Call in the event listener for page load
 async function getApiKey() {
-  let snapshot = await getDoc(doc(db, "apikey", "googlegenai"));
+  let snapshot = await getDoc(doc(db, "apikeyAIzaSyC2kOseKGgysr_VdfyidCulCI-BogidU4Q", "googlegenai"));
   apiKey =  snapshot.data().key;
   genAI = new GoogleGenerativeAI(apiKey);
   model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });

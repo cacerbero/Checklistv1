@@ -605,7 +605,7 @@ var _loglevel = require("loglevel");
 var _loglevelDefault = parcelHelpers.interopDefault(_loglevel);
 //Call in the event listener for page load
 async function getApiKey() {
-    let snapshot = await getDoc((0, _firestore.doc)(db, "apikey", "googlegenai"));
+    let snapshot = await getDoc((0, _firestore.doc)(db, "apikeyAIzaSyC2kOseKGgysr_VdfyidCulCI-BogidU4Q", "googlegenai"));
     apiKey = snapshot.data().key;
     genAI = new (0, _generativeAi.GoogleGenerativeAI)(apiKey);
     model = genAI.getGenerativeModel({
